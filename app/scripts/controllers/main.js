@@ -9,9 +9,16 @@
  */
 angular.module('proFileApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    var resume = this;
+    resume.profile = [
+        {   
+            personProfile : {
+                name: 'Misael Cázares',
+                occupation: 'Web Developer',
+                age: 23,
+                birth_date: '2012-04-23'
+            }
+
+        }        
     ];
   });
