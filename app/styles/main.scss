@@ -2,6 +2,15 @@
 
 @import 'color-palette'; 
 
+/****************************************************************************/
+/* Universal Styles & Common Fixes */
+/****************************************************************************/
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
 .header-bg {
   background-color: $primary;
   height: 200px;
@@ -25,5 +34,29 @@
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     }
 }
+
+#send-dialog {
+    ul {
+        padding: 0;
+        padding-top: 30px;
+        li {
+            display: inline-block;
+            padding-left: 40px;
+            &:nth-child(1) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .no-uppercase {
+        text-transform: initial;
+    }
+
+    md-input-container {
+        padding-top: 1px;
+    }
+}
+
+
 // endbower
 
