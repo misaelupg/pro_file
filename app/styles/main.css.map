@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,UAAW;EACT,gBAAgB,ECLX,OAAO;EDMZ,MAAM,EAAE,KAAK",
+"sources": ["main.scss","_color-palette.scss"],
+"names": [],
+"file": "main.css"
+}

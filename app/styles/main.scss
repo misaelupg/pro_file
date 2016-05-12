@@ -1,3 +1,29 @@
 // bower:scss
+
+@import 'color-palette'; 
+
+.header-bg {
+  background-color: $primary;
+  height: 200px;
+  position: absolute;
+  width: 100%;
+}
+
+.paper-sheet {
+    min-width: 700px;
+    height: 1400px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+#send-button {
+    position: relative;
+    left: 30px;
+    top: 164px;
+    &[z-depth="2"] {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+}
 // endbower
 

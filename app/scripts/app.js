@@ -8,12 +8,10 @@
  *
  * Main module of the application.
  */
-angular
-  .module('proFileApp', [
-    'ngResource',
-    'ngSanitize',
-    'ngMaterial'
-  ]).config(function($mdThemingProvider) {
+var app = angular.module('proFileApp', ['ngResource', 'ngMaterial', 'ui.router']);
+
+app.config(function($mdThemingProvider, $stateProvider, $urlRouterProvider) {
+    //Theming
       $mdThemingProvider.theme('default')
         .primaryPalette('blue-grey', {
           'default': '900', // by default use shade 900 from the blue-grey palette for primary intentions
@@ -22,7 +20,24 @@ angular
         // If you specify less than all of the keys, it will inherit from the
         // default shades
         .accentPalette('light-blue', {
-          'default': '700', // use shade 200 for default, and keep all other shades the same
+          'default': 'A700', // use shade 200 for default, and keep all other shades the same
           'hue-1': 'A400'
         });
+
+        //Routes
+        //For any umatched url, redirect to index
+        $urlRouterProvider.otherwise('/main');
+
+        $stateProvider
+            .state('main', {
+                url: '/main',
+                templateUrl: "views/main.html", 
+                controller: 'MainCtrl'
+            })
+            .state('preview', {
+                url: '/main',
+                templateUrl: "views/preview.html", 
+                controller: 'PreviewCtrl'
+            });
+
 });
