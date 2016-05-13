@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular.module('proFileApp', ['ngResource', 'ngMaterial', 'ui.router']);
+var app = angular.module('proFileApp', ['ngResource', 'ngMaterial', 'ui.router', 'angular-svg-round-progressbar']);
 
 app.config(function($mdThemingProvider, $stateProvider, $urlRouterProvider) {
     //Theming
@@ -35,7 +35,7 @@ app.config(function($mdThemingProvider, $stateProvider, $urlRouterProvider) {
                 controller: 'MainCtrl'
             })
             .state('preview', {
-                url: '/main',
+                url: '/preview',
                 templateUrl: "views/preview.html", 
                 controller: 'PreviewCtrl'
             });

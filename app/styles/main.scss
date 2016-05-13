@@ -9,7 +9,16 @@
 ul {
     list-style: none;
     text-decoration: none;
+    padding: 0;
 }
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: auto;
+}
+/****************************************************************************/
+/* Main View */
+/****************************************************************************/
 
 .header-bg {
   background-color: $primary;
@@ -19,11 +28,67 @@ ul {
 }
 
 .paper-sheet {
-    min-width: 700px;
-    height: 1400px;
-    background-color: white;
-    z-index: 1;
-    border-radius: 2px;
+  position: relative;
+  background-color: white;
+  border-radius: 2px;
+  height: 1.5*842px;
+  max-width: 1.5*595px;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 30px;
+    .personal-section {
+      background-color: black; 
+      color: white;
+      height: 100%;
+    }
+    .profile-picture {
+        background-color: $primary-hue-1;
+        // background: url('../images/12.jpg') no-repeat center/cover;
+    }
+    
+    .personal-info, .professional-info {
+        h1, h2, h3 {
+                font-weight: 100;
+            }
+    }
+}
+
+.personal-info {
+        padding: 10% 15%;
+        h1 {
+            margin-top: 2.2em;
+            &:nth-of-type(1) {
+                margin-top: 0.67em;
+            }
+        }
+        h3 {
+            opacity: 0.7;
+            margin: 0;
+        }
+        h2 {
+            margin: 2.2em 0 0.3em 0;
+        }
+        .language {
+            width: 60px;
+            height: 90px;
+            display: inline-block;
+            text-align: center;
+            margin: 1.2em .6em .5em 0;
+        }
+        .language-bubble {
+            margin-bottom: .5em;
+            position: relative;
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+.professional-info {
+    padding: 10% 10%;
 }
 
 #send-button {
@@ -57,6 +122,12 @@ ul {
     }
 }
 
+.action-buttons {
+    float: right;
+    position: absolute;
+    right: 0;
+    top:0;
+}
 
 // endbower
 

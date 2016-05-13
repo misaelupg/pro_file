@@ -2,8 +2,112 @@
     <div class="header-bg">
     </div>
     <div layout="row" layout-align="center start">
-        <div md-whiteframe="2" flex="40" class="paper-sheet">
-          <span>Elevation of 3dp</span>
+        <div md-whiteframe="2" class="paper-sheet" layout="row">
+            <div layout="column" class="personal-section" flex="35">
+                <div class="profile-picture" flex></div>
+                <div flex="75" class="personal-info">
+                    <h1 class="md-headline">PROFILE</h1>
+                        <h2 class="md-body-1">Birthday:</h2>
+                        <h3 class="md-body-1">May 18th, 1993</h3>
+                        <h2 class="md-body-1">Address:</h2>
+                        <h3 class="md-body-1">Herreros 174B, San Pedrito Peñuelas, 76148</h3>
+                        <h2 class="md-body-1">Phone:</h2>
+                        <h3 class="md-body-1">(442) 230 8556</h3>
+                        <h2 class="md-body-1">Email:</h2>
+                        <h3 class="md-body-1">misael.upg@gmail.com</h3>
+                        <h2 class="md-body-1">Website/Links/Social Media:</h2>
+                        <ul>
+                        <li><h3 class="md-body-1">http://linkedin.com/misael.upg</h3></li>
+                        <li><h3 class="md-body-1">http://twitter.com/misael.upg</h3></li>
+                        <li><h3 class="md-body-1">http://gitlab.com/misael_upg</h3></li>
+                        <li><h3 class="md-body-1">http://github.com/misael_upg</h3></li>
+                        </ul>
+                    <h1 class="md-headline">REFERENCES</h1>
+                        <ul>
+                            <li><h3 class="md-body-1">None</h3></li>
+                        </ul>
+                    <h1 class="md-headline">LANGUAGES</h1>
+                        <div class="language">
+                            <div class="language-bubble">
+                                <round-progress
+                                    max="100"
+                                    current="75"
+                                    color="#fff"
+                                    bgcolor="#263238"
+                                    radius="28"
+                                    stroke="4"
+                                    semi="fasle"
+                                    rounded="false"
+                                    clockwise="true"
+                                    responsive="false"
+                                    duration="800"
+                                    animation="easeInOutQuart"
+                                    animation-delay="0">
+                                </round-progress>
+                                <span class="md-caption">75%</span>
+                            </div>
+                            <h3 class="md-body-1">English</h3>
+                        </div>
+                        <div class="language">
+                            <div class="language-bubble">
+                                <round-progress
+                                    max="100"
+                                    current="25"
+                                    color="#fff"
+                                    bgcolor="#263238"
+                                    radius="28"
+                                    stroke="4"
+                                    semi="fasle"
+                                    rounded="false"
+                                    clockwise="true"
+                                    responsive="false"
+                                    duration="800"
+                                    animation="easeInOutQuart"
+                                    animation-delay="0">
+                                </round-progress>
+                                <span class="md-caption">25%</span>
+                            </div>
+                            <h3 class="md-body-1">French</h3>
+                        </div>
+                        <div class="language">
+                            <div class="language-bubble">
+                                <round-progress
+                                    max="100"
+                                    current="100"
+                                    color="#fff"
+                                    bgcolor="#263238"
+                                    radius="28"
+                                    stroke="4"
+                                    semi="fasle"
+                                    rounded="false"
+                                    clockwise="true"
+                                    responsive="false"
+                                    duration="800"
+                                    animation="easeInOutQuart"
+                                    animation-delay="0">
+                                </round-progress>
+                                <span class="md-caption">Native</span>
+                            </div>
+                            <h3 class="md-body-1">Spanish</h3>
+                        </div>
+                </div>
+            </div>
+            <div class="main-content" layout="column" flex>
+                <div class="action-buttons" flex>
+                  <a ui-sref="preview" ><md-button class="md-accent">Preview</md-button></a>
+                  <md-button  class="md-icon-button md-accent" >
+                    <md-icon><i class="material-icons ">file_download</i></md-icon>
+                  </md-button> 
+                  <md-button  class="md-icon-button md-accent" >
+                    <md-icon><i class="material-icons">mode_edit</i></md-icon>
+                  </md-button> 
+                </div>
+                <div class="professional-info" layout="column" flex>
+                    <div flex><h1 class="md-headline">WORK EXPERIENCE</h1></div>
+                    <div flex><h1 class="md-headline">EDUCATION</h1></div>
+                    <div flex><h1 class="md-headline">SKILLS</h1></div>
+                </div>
+            </div>
         </div>
         <md-button ng-click="showSend($event)" class="md-fab md-accent " z-depth="2" id="send-button" aria-label="Eat cake">
             <md-icon ><i class="material-icons">send</i></md-icon>
