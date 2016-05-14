@@ -6,6 +6,12 @@
 /* Universal Styles & Common Fixes */
 /****************************************************************************/
 
+body {
+    background-color: #fafafa;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
 ul {
     list-style: none;
     text-decoration: none;
@@ -19,6 +25,9 @@ a{
 /****************************************************************************/
 /* Main View */
 /****************************************************************************/
+
+/*========== Personal Info Section ==========*/
+
 
 .header-bg {
   background-color: $primary;
@@ -46,12 +55,15 @@ a{
         // background: url('../images/12.jpg') no-repeat center/cover;
     }
     
-    .personal-info, .professional-info {
+    .personal-info {
         h1, h2, h3 {
                 font-weight: 100;
             }
     }
 }
+
+/*========== Professional Info ==========*/
+
 
 .personal-info {
         padding: 10% 15%;
@@ -85,11 +97,84 @@ a{
                 transform: translate(-50%, -50%);
             }
         }
+
     }
 
 .professional-info {
-    padding: 10% 10%;
+    padding: 5% 10%;
+    h1 {
+        font-weight: 100;
+    }
+    h2 {
+        font-weight: 100;
+        margin-bottom: 0;
+        margin-top: 1.5em;
+        font-weight: 800;
+    }
+    h3 {
+        margin-top: 0;
+    }
+    p {
+        margin-top: .5em;
+    }
+
+    .work-items, .education-items {
+        border-left: 1px dashed $primary;
+        li {
+            position: relative;
+            padding-left: 95px;
+        }
+    }
+    
+
+    .time-period {
+        position: absolute;
+        left: 0;
+        top: 4px;
+        padding-left: 15px;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid $primary;
+            border-radius: 100%;
+            left: -8px;
+            background-color: white;
+        }
+    }
+
+    .skills-container {
+        h3 {
+            margin: .1em;
+            font-weight: 400;
+        }
+    }
+    .skills-professional, .skills-personal {
+         h2 {
+            margin-top: .5em;
+        }
+    }
 }
+
+.bar-max {
+    margin-bottom: 0.3em;
+    background-color: rgba(0, 0, 0, .1);
+    height: 7px;
+    width: 90%;
+    .bar-current {
+        display: block;
+        width: 50%;
+        height: 100%;
+        background-color: $primary; 
+    }
+}
+
+
+
+
+/*========== Dialog and Fab ==========*/
+
 
 #send-button {
     position: relative;
@@ -101,6 +186,10 @@ a{
 }
 
 #send-dialog {
+    md-dialog-content, md-dialog-actions {
+        background-color: #fafafa;
+    }
+    
     ul {
         padding: 0;
         padding-top: 30px;
@@ -122,11 +211,18 @@ a{
     }
 }
 
+/*========== Professional Section ==========*/
+
+
 .action-buttons {
     float: right;
     position: absolute;
     right: 0;
     top:0;
+}
+
+hr {
+    opacity: .2;
 }
 
 // endbower

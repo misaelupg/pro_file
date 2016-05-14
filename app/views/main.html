@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl">
+<div ng-controller="MainCtrl as main">
     <div class="header-bg">
     </div>
     <div layout="row" layout-align="center start">
@@ -75,7 +75,7 @@
                                     max="100"
                                     current="100"
                                     color="#fff"
-                                    bgcolor="#263238"
+                                    bgcolor="#eceff1"
                                     radius="28"
                                     stroke="4"
                                     semi="fasle"
@@ -103,9 +103,157 @@
                   </md-button> 
                 </div>
                 <div class="professional-info" layout="column" flex>
-                    <div flex><h1 class="md-headline">WORK EXPERIENCE</h1></div>
-                    <div flex><h1 class="md-headline">EDUCATION</h1></div>
-                    <div flex><h1 class="md-headline">SKILLS</h1></div>
+                    <div flex>
+                        <h1 class="md-headline">WORK EXPERIENCE</h1>
+                        <div class="work-items">
+                            <ul>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">CONTACT CENTER SANTANDER</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">ABSTRACT INC.</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">GOOGLE INC.</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div flex>
+                        <hr>
+                        <h1 class="md-headline">EDUCATION</h1>
+                        <div class="education-items">
+                            <ul>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">CONTACT CENTER SANTANDER</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">ABSTRACT INC.</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                                <li>
+                                    <span class="time-period md-caption">2016-2012</span>
+                                    <h2 class="md-body-2">GOOGLE INC.</h2>
+                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
+                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div flex>
+                        <hr>
+                        <h1 class="md-headline">SKILLS</h1>
+                        <div class="skills-container" layout="row">
+                            <div flex class="skills-professional">
+                            <h2 class="md-body-2">PROFESSIONAL</h2>
+                            <ul>
+                                <li>
+                                    <h3 class="md-caption">UX, UI, HCI, HCD</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Python, Django, Flask</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">PHP, Laravel</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Ruby</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Angular, Polymer</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Git, GitHub, GitLab, TaskRunners</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Sketch, Illustrator, Photoshop</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Relational & Non Relational DB</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+                            <div flex class="skills-personal">
+                                <h2 class="md-body-2">PERSONAL</h2>
+                                <ul>
+                                <li>
+                                    <h3 class="md-caption">Communication, Team Work</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Attention to detail, Obsession, Quality</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Self-learning, Curiosity</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Empathy</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Vision, Creativity</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="md-caption">Sociable, Frienly</h3>
+                                    <div class="bar-max">
+                                        <span class="bar-current"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

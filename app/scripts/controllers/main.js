@@ -8,7 +8,8 @@
  * Controller of the proFileApp
  */
 app
-  .controller('MainCtrl', ['$scope', '$mdDialog', '$mdMedia', function ($scope, $mdDialog, $mdMedia) {
+  .controller('MainCtrl', ['$scope', '$mdDialog', '$mdMedia', 
+    'profileData', function ($scope, $mdDialog, $mdMedia) {
 
     $scope.showSend = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
@@ -42,4 +43,6 @@ app
     $mdDialog.hide(answer);
   };
 }
+
+    $scope.profileData = dataFact.getProfileData();
   }]);
