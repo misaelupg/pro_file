@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl as main">
+<div ng-controller="MainCtrl as profile">
     <div class="header-bg">
     </div>
     <div layout="row" layout-align="center start">
@@ -8,7 +8,7 @@
                 <div flex="75" class="personal-info">
                     <h1 class="md-headline">PROFILE</h1>
                         <h2 class="md-body-1">Birthday:</h2>
-                        <h3 class="md-body-1">May 18th, 1993</h3>
+                        <h3 class="md-body-1">{{profileData.birthday}}</h3>
                         <h2 class="md-body-1">Address:</h2>
                         <h3 class="md-body-1">Herreros 174B, San Pedrito Peñuelas, 76148</h3>
                         <h2 class="md-body-1">Phone:</h2>

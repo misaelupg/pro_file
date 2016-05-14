@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('profileData', function(){
+app.factory('profileFactory', function(){
 
     var dataFact = {};
     var userData = 

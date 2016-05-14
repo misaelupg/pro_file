@@ -9,8 +9,8 @@
  */
 app
   .controller('MainCtrl', ['$scope', '$mdDialog', '$mdMedia', 
-    'profileData', function ($scope, $mdDialog, $mdMedia) {
-
+    'profileFactory', function ($scope, $mdDialog, $mdMedia, profileFactory) {
+        
     $scope.showSend = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
@@ -44,5 +44,6 @@ app
   };
 }
 
-    $scope.profileData = dataFact.getProfileData();
+    $scope.profileData = profileFactory.getProfileData();
+    
   }]);
