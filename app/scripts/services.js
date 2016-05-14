@@ -12,18 +12,22 @@ app.factory('profileFactory', function(){
         address: 'Herreros 174B, San Pedrito Peñuelas, 76148',
         phoneNumber: '(442) 230 8556',
         emailAddress: 'misael.upg@gmail.com',
-        websiteLinks: 
+        webLinks: 
         [
             'http://faceboom.com/misael.upg', 
             'http://linkedin.com/misael.upg',
             'http://github.com/misael_upg'
         ], 
-        references: [],
+        references: 
+        [
+            {referenceName: 'Estefania Cázares', referencePhone: '(442) 230 8556'},
+            {referenceName: 'Estefania Cázares', referencePhone: '(442) 230 8556'},
+        ],
         languages: 
         [
-            {langauge:'English', level:'75'},
-            {language:'French', level: ''},
-            {langauge:'Spanish', level:'Native'}
+            {language:'English', level:75, native:false},
+            {language:'French', level: 25, native:false},
+            {language:'Spanish', level:100, native:true}
         ],
         workExperience: 
         [
@@ -50,21 +54,21 @@ app.factory('profileFactory', function(){
         [
             {
                 time:'2012-2012', 
-                career: 'Contact Center Santander', 
-                institutionName: 'Operdor Banca Telefónica', 
-                experiencesAchievements: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
+                career: 'Inegeniería en Nanotencología - Trunca (1er Semestre)', 
+                institutionName: 'Universidad Autónoma de Querétaro', 
+                experience: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
             },
             {
                 time:'2012-2012', 
                 career: 'Abstract Inc.', 
                 institutionName: 'Operdor Banca Telefónica', 
-                experiencesAchievements: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
+                experience: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
             },
             {
                 time:'2012-2012', 
                 career: 'Facebook Inc.', 
                 institutionName: 'Operdor Banca Telefónica', 
-                experiencesAchievements: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
+                experience: 'Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.'
             }
         ],
         skills: 

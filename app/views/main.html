@@ -8,30 +8,29 @@
                 <div flex="75" class="personal-info">
                     <h1 class="md-headline">PROFILE</h1>
                         <h2 class="md-body-1">Birthday:</h2>
-                        <h3 class="md-body-1">{{profileData.birthday}}</h3>
+                        <h3 class="md-body-1">{{profileData.birthday | date : longDate}}</h3>
                         <h2 class="md-body-1">Address:</h2>
-                        <h3 class="md-body-1">Herreros 174B, San Pedrito Peñuelas, 76148</h3>
+                        <h3 class="md-body-1">{{profileData.address}}</h3>
                         <h2 class="md-body-1">Phone:</h2>
-                        <h3 class="md-body-1">(442) 230 8556</h3>
+                        <h3 class="md-body-1">{{profileData.phoneNumber}}</h3>
                         <h2 class="md-body-1">Email:</h2>
-                        <h3 class="md-body-1">misael.upg@gmail.com</h3>
+                        <h3 class="md-body-1">{{profileData.emailAddress}}</h3>
                         <h2 class="md-body-1">Website/Links/Social Media:</h2>
-                        <ul>
-                        <li><h3 class="md-body-1">http://linkedin.com/misael.upg</h3></li>
-                        <li><h3 class="md-body-1">http://twitter.com/misael.upg</h3></li>
-                        <li><h3 class="md-body-1">http://gitlab.com/misael_upg</h3></li>
-                        <li><h3 class="md-body-1">http://github.com/misael_upg</h3></li>
+                        <ul >
+                        <li ng-repeat="webLink in profileData.webLinks"><h3 class="md-body-1">{{webLink}}</h3></li>
                         </ul>
                     <h1 class="md-headline">REFERENCES</h1>
                         <ul>
-                            <li><h3 class="md-body-1">None</h3></li>
+                            <li class="reference" ng-repeat="reference in profileData.references"><h3 class="md-body-1">{{reference.referenceName}}</h3>
+                            <h3 class="md-body-1">{{reference.referencePhone}}</h3></li>
+                            <li class="reference" ng-if="profileData.references.length === 0"><h3 class="md-body-1">None</h3></li>
                         </ul>
                     <h1 class="md-headline">LANGUAGES</h1>
-                        <div class="language">
+                        <div class="language" ng-repeat="language in profileData.languages">
                             <div class="language-bubble">
                                 <round-progress
                                     max="100"
-                                    current="75"
+                                    current="language.level"
                                     color="#fff"
                                     bgcolor="#263238"
                                     radius="28"
@@ -44,51 +43,10 @@
                                     animation="easeInOutQuart"
                                     animation-delay="0">
                                 </round-progress>
-                                <span class="md-caption">75%</span>
+                                <span class="md-caption" ng-if="!language.native" ng-href="template">{{language.level}}%</span>
+                                <span class="md-caption" ng-if="language.native">Native</span>
                             </div>
-                            <h3 class="md-body-1">English</h3>
-                        </div>
-                        <div class="language">
-                            <div class="language-bubble">
-                                <round-progress
-                                    max="100"
-                                    current="25"
-                                    color="#fff"
-                                    bgcolor="#263238"
-                                    radius="28"
-                                    stroke="4"
-                                    semi="fasle"
-                                    rounded="false"
-                                    clockwise="true"
-                                    responsive="false"
-                                    duration="800"
-                                    animation="easeInOutQuart"
-                                    animation-delay="0">
-                                </round-progress>
-                                <span class="md-caption">25%</span>
-                            </div>
-                            <h3 class="md-body-1">French</h3>
-                        </div>
-                        <div class="language">
-                            <div class="language-bubble">
-                                <round-progress
-                                    max="100"
-                                    current="100"
-                                    color="#fff"
-                                    bgcolor="#eceff1"
-                                    radius="28"
-                                    stroke="4"
-                                    semi="fasle"
-                                    rounded="false"
-                                    clockwise="true"
-                                    responsive="false"
-                                    duration="800"
-                                    animation="easeInOutQuart"
-                                    animation-delay="0">
-                                </round-progress>
-                                <span class="md-caption">Native</span>
-                            </div>
-                            <h3 class="md-body-1">Spanish</h3>
+                            <h3 class="md-body-1">{{language.language}}</h3>
                         </div>
                 </div>
             </div>
@@ -107,23 +65,11 @@
                         <h1 class="md-headline">WORK EXPERIENCE</h1>
                         <div class="work-items">
                             <ul>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">CONTACT CENTER SANTANDER</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
-                                </li>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">ABSTRACT INC.</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
-                                </li>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">GOOGLE INC.</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                <li ng-repeat="work in profileData.workExperience">
+                                    <span class="time-period md-caption">{{work.time}}</span>
+                                    <h2 class="md-body-2">{{work.companyName | uppercase}}</h2>
+                                    <h3 class="md-body-2">{{work.jobPosition}}</h3>
+                                    <p class="md-caption">{{work.jobDescription}}</p>
                                 </li>
                             </ul>
                         </div>
@@ -133,23 +79,11 @@
                         <h1 class="md-headline">EDUCATION</h1>
                         <div class="education-items">
                             <ul>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">CONTACT CENTER SANTANDER</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
-                                </li>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">ABSTRACT INC.</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
-                                </li>
-                                <li>
-                                    <span class="time-period md-caption">2016-2012</span>
-                                    <h2 class="md-body-2">GOOGLE INC.</h2>
-                                    <h3 class="md-body-2">Operador Banca Telefónica</h3>
-                                    <p class="md-caption">Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be unexpected and vibrant.</p>
+                                <li ng-repeat="achievement in profileData.education">
+                                    <span class="time-period md-caption">{{achievement.time}}</span>
+                                    <h2 class="md-body-2">{{achievement.career}}</h2>
+                                    <h3 class="md-body-2">{{achievement.institutionName}}</h3>
+                                    <p class="md-caption">{{achievement.experience}}</p>
                                 </li>
                             </ul>
                         </div>
@@ -161,52 +95,10 @@
                             <div flex class="skills-professional">
                             <h2 class="md-body-2">PROFESSIONAL</h2>
                             <ul>
-                                <li>
-                                    <h3 class="md-caption">UX, UI, HCI, HCD</h3>
+                                <li ng-repeat="skill in profileData.skills.professionalSkills">
+                                    <h3 class="md-caption">{{skill.skill}}</h3>
                                     <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Python, Django, Flask</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">PHP, Laravel</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Ruby</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Angular, Polymer</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Git, GitHub, GitLab, TaskRunners</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Sketch, Illustrator, Photoshop</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Relational & Non Relational DB</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
+                                        <span class="bar-current" data-level="{{skill.level}}"></span>
                                     </div>
                                 </li>
                             </ul>
@@ -214,42 +106,13 @@
                             <div flex class="skills-personal">
                                 <h2 class="md-body-2">PERSONAL</h2>
                                 <ul>
-                                <li>
-                                    <h3 class="md-caption">Communication, Team Work</h3>
+                                <li ng-repeat="skill in profileData.skills.personalSkills">
+                                    <h3 class="md-caption">{{skill.skill}}</h3>
                                     <div class="bar-max">
-                                        <span class="bar-current"></span>
+                                        <span class="bar-current" data-level="{{skill.level}}"></span>
                                     </div>
                                 </li>
-                                <li>
-                                    <h3 class="md-caption">Attention to detail, Obsession, Quality</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Self-learning, Curiosity</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Empathy</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Vision, Creativity</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3 class="md-caption">Sociable, Frienly</h3>
-                                    <div class="bar-max">
-                                        <span class="bar-current"></span>
-                                    </div>
-                                </li>
+                                {{updateSkillLevel()}}
                             </ul>
                             </div>
                         </div>

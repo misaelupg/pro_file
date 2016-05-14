@@ -10,7 +10,7 @@
 app
   .controller('MainCtrl', ['$scope', '$mdDialog', '$mdMedia', 
     'profileFactory', function ($scope, $mdDialog, $mdMedia, profileFactory) {
-        
+
     $scope.showSend = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
@@ -20,11 +20,6 @@ app
       targetEvent: ev,
       clickOutsideToClose:true,
       fullscreen: useFullScreen
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
     });
     $scope.$watch(function() {
       return $mdMedia('xs') || $mdMedia('sm');
@@ -45,5 +40,16 @@ app
 }
 
     $scope.profileData = profileFactory.getProfileData();
+
     
+
+  $scope.skillSet = document.getElementsByClassName('bar-current');
+    
+    $scope.updateSkillLevel = function() {
+       for (var i = 0; i < $scope.skillSet.length; i++) {
+            $scope.skillSet[i].style.width = $scope.skillSet[i].dataset.level + '%';
+        }
+    };
+
+
   }]);

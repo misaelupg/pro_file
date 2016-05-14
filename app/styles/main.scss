@@ -62,7 +62,7 @@ a{
     }
 }
 
-/*========== Professional Info ==========*/
+
 
 
 .personal-info {
@@ -70,7 +70,7 @@ a{
         h1 {
             margin-top: 2.2em;
             &:nth-of-type(1) {
-                margin-top: 0.67em;
+                margin-top: 0.2em;
             }
         }
         h3 {
@@ -98,7 +98,14 @@ a{
             }
         }
 
+        .reference {
+            margin-bottom: 0.3em;
+        }
+
     }
+
+
+/*========== Professional Info ==========*/
 
 .professional-info {
     padding: 5% 10%;
@@ -113,6 +120,9 @@ a{
     }
     h3 {
         margin-top: 0;
+        &.md-body-2 {
+            font-size: 12px;
+        }
     }
     p {
         margin-top: .5em;
@@ -158,13 +168,12 @@ a{
 }
 
 .bar-max {
-    margin-bottom: 0.3em;
+    margin-bottom: .3em;
     background-color: rgba(0, 0, 0, .1);
     height: 7px;
     width: 90%;
     .bar-current {
         display: block;
-        width: 50%;
         height: 100%;
         background-color: $primary; 
     }
@@ -222,6 +231,7 @@ a{
 }
 
 hr {
+    display: none;
     opacity: .2;
 }
 
